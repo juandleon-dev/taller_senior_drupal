@@ -1,0 +1,7 @@
+modulo_empleado.registro_form:
+  path: '/registro-form'
+  defaults:
+    _form: '\Drupal\modulo_empleado\Form\RegistroForm'
+    _title: 'Subscribe form'
+  requirements:
+    _permission: 'modulo_empleado crear nuevo registro'
