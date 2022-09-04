@@ -1,0 +1,10 @@
+entity.empleado.settings:
+  title: Empleado
+  description: Configure an Empleado entity type
+  route_name:  entity.empleado.settings
+  parent: system.admin_structure
+entity.empleado.collection:
+  title: Empleados
+  description: List of empleados
+  route_name: entity.empleado.collection
+  parent: system.admin_content

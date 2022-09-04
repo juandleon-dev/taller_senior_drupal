@@ -1,0 +1,7 @@
+name: Empleado
+type: module
+description: 'Provides an empleado entity.'
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: entity.empleado.settings

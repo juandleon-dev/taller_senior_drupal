@@ -1,0 +1,13 @@
+administer empleado:
+  title: 'Administer empleado settings'
+  restrict access: true
+access empleado overview:
+  title: 'Access empleado overview page'
+delete empleado:
+  title: Delete empleado
+create empleado:
+  title: Create empleado
+view empleado:
+  title: View empleado
+edit empleado:
+  title: Edit empleado

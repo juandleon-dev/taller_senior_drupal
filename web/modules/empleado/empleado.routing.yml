@@ -1,0 +1,7 @@
+entity.empleado.settings:
+  path: 'admin/structure/empleado'
+  defaults:
+    _form: '\Drupal\empleado\Form\EmpleadoSettingsForm'
+    _title: 'Empleado'
+  requirements:
+    _permission: 'administer empleado'

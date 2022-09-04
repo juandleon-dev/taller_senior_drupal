@@ -1,0 +1,5 @@
+empleado.add_form:
+  route_name: entity.empleado.add_form
+  title: 'Add empleado'
+  appears_on:
+    - entity.empleado.collection

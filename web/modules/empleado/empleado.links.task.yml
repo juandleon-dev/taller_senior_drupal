@@ -1,0 +1,22 @@
+entity.empleado.settings:
+  title: Settings
+  route_name: entity.empleado.settings
+  base_route: entity.empleado.settings
+entity.empleado.view:
+  title: View
+  route_name: entity.empleado.canonical
+  base_route: entity.empleado.canonical
+entity.empleado.edit_form:
+  title: Edit
+  route_name: entity.empleado.edit_form
+  base_route: entity.empleado.canonical
+entity.empleado.delete_form:
+  title: Delete
+  route_name: entity.empleado.delete_form
+  base_route: entity.empleado.canonical
+  weight: 10
+entity.empleado.collection:
+  title: Empleado
+  route_name: entity.empleado.collection
+  base_route: system.admin_content
+  weight: 10
