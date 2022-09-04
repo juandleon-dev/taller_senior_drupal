@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: docker/webserver/Dockerfile
+    working_dir: /var/www/html/drupal
+    depends_on:
+      - database
+    environment:
+      - PHP_MEMORY_LIMIT=-1
+      - FPM_PM_MAX_CHILDREN=128
+      - FPM_PM_START_SERVERS=8
+      - FPM_PM_MIN_SPARE_SERVERS=4
+      - FPM_PM_MAX_SPARE_SERVERS=8
+      - FPM_MAX_REQUESTS=512
+      - WEB_DOCUMENT_ROOT=/var/www/html/drupal/web
+      - PHP_OPCACHE_MEMORY_CONSUMPTION=512
+      - PHP_OPCACHE_MAX_ACCELERATED_FILES=65407
+      - PHP_OPCACHE_INTERNED_STRINGS_BUFFER=32
+      - php.realpath_cache_size=4096K
+      - php.realpath_cache_ttl=600
+#      - PHP_DEBUGGER=${OROCOMMERCE_DEBUGGER}
+      - XDEBUG_MODE=develop,debug
+#      - XDEBUG_CLIENT_HOST=${OROCOMMERCE_XDEBUG_REMOTE_HOST}
+#      - XDEBUG_CLIENT_PORT=${OROCOMMERCE_XDEBUG_REMOTE_PORT}
+      - XDEBUG_IDE_KEY=PHPSTORM
+      - XDEBUG_SESSION=PHPSTORM
+    volumes:
+      # drupal (main)
+      - .:/var/www/html/drupal
+      #Supervisor
+      - ./docker/webserver/supervisor/local/supervisor.conf:/opt/docker/etc/supervisor.d/supervisor.conf
+      - ./docker/webserver/supervisor/local/orocommerce.conf:/opt/docker/etc/supervisor.d/orocommerce.conf
+    ports:
+      - "8080:80"
+#      - "9001:9001"
+
+  database:
+    image: mysql:8.0.19
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=master
+      - MYSQL_DATABASE=drupal
+      - MYSQL_USER=drupal
+      - MYSQL_PASSWORD=drupal
+    ports:
+      - "3309:3306"
+
