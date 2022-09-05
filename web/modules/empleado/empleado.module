@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implement hook_entity_presave
+ */
+function empleado_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'empleado') {
+    $entity->set('field_t', 10);
+  }
+}

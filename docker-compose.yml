@@ -21,8 +21,8 @@ services:
       - PHP_OPCACHE_INTERNED_STRINGS_BUFFER=32
       - php.realpath_cache_size=4096K
       - php.realpath_cache_ttl=600
-#      - PHP_DEBUGGER=${OROCOMMERCE_DEBUGGER}
-      - XDEBUG_MODE=develop,debug
+      - PHP_DEBUGGER=0
+#      - XDEBUG_MODE=none
 #      - XDEBUG_CLIENT_HOST=${OROCOMMERCE_XDEBUG_REMOTE_HOST}
 #      - XDEBUG_CLIENT_PORT=${OROCOMMERCE_XDEBUG_REMOTE_PORT}
       - XDEBUG_IDE_KEY=PHPSTORM
