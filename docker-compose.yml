@@ -22,7 +22,7 @@ services:
       - php.realpath_cache_size=4096K
       - php.realpath_cache_ttl=600
       - PHP_DEBUGGER=0
-#      - XDEBUG_MODE=none
+      - XDEBUG_MODE=coverage
 #      - XDEBUG_CLIENT_HOST=${OROCOMMERCE_XDEBUG_REMOTE_HOST}
 #      - XDEBUG_CLIENT_PORT=${OROCOMMERCE_XDEBUG_REMOTE_PORT}
       - XDEBUG_IDE_KEY=PHPSTORM

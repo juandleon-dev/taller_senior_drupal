@@ -1,0 +1,5 @@
+empleado.crear.links:
+  title: 'Crear empleado'
+  route_name: modulo_empleado.registro_form
+  parent: system.admin
+  position: -1

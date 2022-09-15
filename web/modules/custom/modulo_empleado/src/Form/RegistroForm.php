@@ -11,8 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 class RegistroForm extends FormBase
 {
 
-  public function getFormId()
-  {
+  public function getFormId(): string {
     return 'registro_form';
   }
 
