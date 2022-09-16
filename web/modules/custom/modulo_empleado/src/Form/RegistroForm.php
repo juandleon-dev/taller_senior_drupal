@@ -203,7 +203,7 @@ class RegistroForm extends FormBase
     $node->set('field_departamento', $page_values['departamento']);
     $node->set('field_ciudad', $page_values['ciudad']);
     $node->set('field_empresa',  $form_state->getValue('empresa'));
-    $node->set('field_t', $form_state->getValue('tiempo_laborado'));
+    $node->set('field_tiempo_laborado', $form_state->getValue('tiempo_laborado'));
     $node->set('field_salario', $form_state->getValue('salario'));
     $node->save();
 
